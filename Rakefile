@@ -1,5 +1,5 @@
 require 'rake/testtask'
-require './OctokitClient.rb'
+require File.dirname(__FILE__) + '/OctokitClient.rb'
 
 @live_site_deploy = Jenkins::LiveDeploy.new
 

@@ -61,8 +61,8 @@ fi
 # Run tests or genrate some tests.
 if [ $1 = "selftest" ]
 then
-  rake
+  rake -f $DIR/../Rakefile
 else
-  rake $command
+  rake -f $DIR/../Rakefile $command
 fi
 

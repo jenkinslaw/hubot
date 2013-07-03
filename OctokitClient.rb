@@ -34,7 +34,7 @@ module Jenkins
     end
 
     def generateEmail
-      email_template = File.open 'templates/live_site_deploy.htm.erb', 'r'
+      email_template = File.open File.dirname(__FILE__) + '/templates/live_site_deploy.htm.erb', 'r'
       erb = ERB.new email_template.read
       erb.result(binding)
     end
