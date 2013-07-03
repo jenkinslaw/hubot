@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <div>
+      <p>Hello,</p>
+
+      <p>We are about to push the following changes to the live site:</p>
+
+      <ul>
+      <% @ready_to_deploy_issues.each do |issue| %>
+        <li><a href='<%= issue.html_url %>'> <%= issue.number %> </a> <%= issue.title %>.</li>
+      <% end %>
+      </ul>
+
+      <p>We will let you know when this process is complete.</p>
+
+      <p>Thanks,</p>
+
+      <p>Website Development Team</p>
+    </div>
+  </body>
+</html>
