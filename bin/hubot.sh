@@ -27,7 +27,7 @@ synopsis()
   echo ''
   echo  Example:
   echo '---------'
-  echo 'hubot mail           Prints copy of the deploy ment notifcation to stdout.'
+  echo 'hubot notify         Sends out a notification email.'
   echo ''
   echo ''
 }
