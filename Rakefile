@@ -5,21 +5,16 @@ require File.dirname(__FILE__) + '/OctokitClient.rb'
 
 task :default => [:test]
 
+@live_site_deploy = Jenkins::LiveDeploy.new
+
 task :notify_group do
-  mail = Mail.new do
-    from 'webmaster@jenkinslaw.org'
-    to   'websitenotification@jenkinslaw.org'
-    subject 'Live Site Update'
-    html_part do 
-      @live_site_deploy = Jenkins::LiveDeploy.new
-      content_type 'text/html; charset=UTF=8'
-      body @live_site_deploy.generateEmail
-    end
-  end
-  
-  mail.delivery_method :sendmail
-  mail.deliver
+  @live_site_deploy.notify_group
 end
+
+task :print_mail do
+  @live_site_deploy.printDeployEmail
+end
+
 
 Rake::TestTask.new do |t|
     t.pattern = "tests/*.rb"

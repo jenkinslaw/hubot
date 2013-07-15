@@ -1,5 +1,6 @@
 require 'octokit'
 require 'erb'
+require File.dirname(__FILE__) + '/LiveDeploy.rb'
 
 module Jenkins
   class OctokitClient
@@ -19,24 +20,6 @@ module Jenkins
         :state =>'open',
       }
       @client.list_issues @website, ready
-    end
-
-  end
-
-  class LiveDeploy
-    def initialize
-      client = Jenkins::OctokitClient.new
-      @ready_to_deploy_issues = client.getReadyToDeployIssues
-    end
-
-    def printDeployEmail
-      puts self.generateEmail
-    end
-
-    def generateEmail
-      email_template = File.open File.dirname(__FILE__) + '/templates/live_site_deploy.htm.erb', 'r'
-      erb = ERB.new email_template.read
-      erb.result(binding)
     end
 
   end
