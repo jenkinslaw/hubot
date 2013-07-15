@@ -9,7 +9,7 @@
 
       <ul>
       <% @ready_to_deploy_issues.each do |issue| %>
-        <li><a href='<%= issue.html_url %>'> <%= issue.number %> </a> <%= issue.title %>.</li>
+        <li><a href='<%= issue.html_url %>'> <%= issue.number %> </a> --  <%= issue.title %>.</li>
       <% end %>
       </ul>
 

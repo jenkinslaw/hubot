@@ -52,9 +52,9 @@ fi
 
 
 # Set up for generating View tests.
-if [ $1 = 'mail' ]
+if [ $1 = 'notify' ]
 then
-  command='print_deploy_email'
+  command='notify_group'
 fi
 
 
