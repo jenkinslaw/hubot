@@ -52,7 +52,7 @@ then
 fi
 
 
-# Set up for generating View tests.
+# Set up command.
 if [ $1 = 'notify' ]
 then
   command='notify_group'
@@ -69,7 +69,7 @@ else
 fi
 
 
-# Run tests or genrate some tests.
+# Run command.
 if [ $1 = "selftest" ]
 then
   rake -f $DIR/../Rakefile
