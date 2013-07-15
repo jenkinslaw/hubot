@@ -8,8 +8,7 @@ task :default => [:test]
 task :notify_group do
   mail = Mail.new do
     from 'webmaster@jenkinslaw.org'
-    #to   'websitenotification@jenkinslaw.org'
-    to   'dkinzer@jenkinslaw.org'
+    to   'websitenotification@jenkinslaw.org'
     subject 'Live Site Update'
     html_part do 
       @live_site_deploy = Jenkins::LiveDeploy.new
