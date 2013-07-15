@@ -25,9 +25,10 @@ synopsis()
   echo 'hubot               Run self tests using casperjs.'
   echo 'hubot [<command>]   The basic signature for the hubot command.'
   echo ''
-  echo  Example:
+  echo  Commands:
   echo '---------'
-  echo 'hubot notify         Sends out a notification email.'
+  echo 'notify        Sends out a notification email.'
+  echo 'mail          Print notification email to stdout.'
   echo ''
   echo ''
 }
@@ -55,6 +56,16 @@ fi
 if [ $1 = 'notify' ]
 then
   command='notify_group'
+elif [ $1 = 'selftest' ]
+then
+  command='selftest'
+elif [ $1 = 'mail' ]
+then
+  command='print_mail'
+else
+  echo "You must provide a command."
+  synopsis
+  exit 64
 fi
 
 
