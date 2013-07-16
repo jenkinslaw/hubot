@@ -8,7 +8,7 @@ task :default => [:test]
 @live_site_deploy = Jenkins::LiveDeploy.new
 
 task :notify_group do
-  @live_site_deploy.notify_group
+  @live_site_deploy.notifyGroup
 end
 
 task :print_mail do

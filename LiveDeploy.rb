@@ -5,7 +5,7 @@ module Jenkins
       @ready_to_deploy_issues = client.getReadyToDeployIssues
     end
 
-    def notify_group
+    def notifyGroup
       message = self.generateEmail
       mail = Mail.new do
         from 'webmaster@jenkinslaw.org'
