@@ -10,7 +10,7 @@ module Jenkins
       mail = Mail.new do
         from 'webmaster@jenkinslaw.org'
         to   'websitenotification@jenkinslaw.org'
-        subject 'Live Site Update'
+        subject 'Live Site Update.'
         html_part do 
           content_type 'text/html; charset=UTF=8'
           body message
