@@ -25,7 +25,6 @@ class TestOctoKitClient < MiniTest::Unit::TestCase
     assert issues[0].title? 'The issue contains a title.'
     assert issues[0].html_url? 'The issue contains an html URL.'
   end
-
 end
 
 class TestJenkinsOctoKitClient < MiniTest::Unit::TestCase
@@ -52,6 +51,4 @@ class TestJenkinsLiveDeploy < MiniTest::Unit::TestCase
   def testPrintDeployEmail
     assert_output(@email) {@deploy.printDeployEmail}
   end
-
 end
-

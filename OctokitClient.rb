@@ -3,8 +3,8 @@ require 'erb'
 require File.dirname(__FILE__) + '/LiveDeploy.rb'
 
 module Jenkins
-  class OctokitClient
 
+  class OctokitClient
     def initialize
       credentials = {
         :login => ENV['GITHUB_JENKINS_USER'],
@@ -21,7 +21,7 @@ module Jenkins
       }
       @client.list_issues @website, ready
     end
-
   end
+
 end
 

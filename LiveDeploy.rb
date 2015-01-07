@@ -1,4 +1,5 @@
 module Jenkins
+
   class LiveDeploy
     def initialize
       client = Jenkins::OctokitClient.new
@@ -21,7 +22,6 @@ module Jenkins
       mail.deliver
     end
 
-
     def printDeployEmail
       puts self.generateEmail
     end
@@ -31,7 +31,6 @@ module Jenkins
       erb = ERB.new email_template.read
       erb.result(binding)
     end
-
   end
-end
 
+end
