@@ -25,6 +25,8 @@ task :notify_group_complete do
       EOT
     end
   end
+   mail.delivery_method 'sendmail'
+   mail.deliver
 end
 
 task :print_mail do
