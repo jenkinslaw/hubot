@@ -13,10 +13,11 @@ Install:
 Synopsis:
 ---------
 * `hubot --help` -- Show this synopsis.
-* `hubot` -- Run self tests using casperjs.
 * `hubot [<command>]` -- The basic signature for the hubot command.
 
 Commands:
 ---------
-* `notify` -- Sends out a notification email.
+* `notify` -- Sends out a start notification email.
+* `notify-end` -- Sends out a end notification email.
 * `mail` -- Print notification email to stdout.
+* `selftest` -- Run self tests.
