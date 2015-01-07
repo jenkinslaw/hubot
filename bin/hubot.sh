@@ -22,13 +22,14 @@ synopsis()
   echo 'Synopsis:'
   echo '---------'
   echo 'hubot --help        Show this synopsis.'
-  echo 'hubot               Run self tests using casperjs.'
   echo 'hubot [<command>]   The basic signature for the hubot command.'
   echo ''
   echo  Commands:
   echo '---------'
-  echo 'notify        Sends out a notification email.'
+  echo 'notify        Sends out a start notification email.'
+  echo 'notify-end    Sends out a end notification email.'
   echo 'mail          Print notification email to stdout.'
+  echo 'selftest      Run self tests using casperjs.'
   echo ''
   echo ''
 }
@@ -56,6 +57,9 @@ fi
 if [ $1 = 'notify' ]
 then
   command='notify_group'
+elif [ $1 = 'notify-end' ]
+then
+  command='notify_group_complete'
 elif [ $1 = 'selftest' ]
 then
   command='selftest'
